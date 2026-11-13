@@ -1,0 +1,139 @@
+.menu-carousel {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+    text-align: center;
+    color: var(--text-color);
+    box-sizing: border-box;
+}
+
+.menu-carousel h2 {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.carousel-arrow:hover {
+    background: var(--secondary-color);
+    color: rgb(163, 1, 1);
+}
+
+.carousel-arrow:focus-visible,
+.carousel-dots button:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+.carousel-arrow.previous {
+    left: 12px;
+}
+
+.carousel-arrow.next {
+    right: 12px;
+}
+
+.menu-carousel h3 {
+    margin: 1rem 0;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.carousel-dots button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-dots button.active {
+    background: var(--secondary-color);
+    transform: scale(1.3);
+}
+
+.carousel-image {
+    animation: carouselFade 0.7s ease-in-out;
+}
+
+@keyframes carouselFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel-image {
+        animation: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-carousel {
+        padding: 1.5rem 1rem 2rem;
+    }
+
+    .menu-carousel h2 {
+        font-size: 1.7rem;
+    }
+
+    .carousel-arrow {
+        width: 34px;
+        height: 34px;
+        font-size: 0.85rem;
+    }
+
+    .menu-carousel h3 {
+        font-size: 1.1rem;
+    }
+}

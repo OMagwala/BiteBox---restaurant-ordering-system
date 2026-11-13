@@ -1,0 +1,338 @@
+.manage-menu {
+    color: var(--primary-color);
+    padding: 2rem;
+}
+
+.menu-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.menu-heading h1 {
+    margin: 0 0 0.5rem;
+}
+
+.menu-heading p {
+    margin: 0;
+    opacity: 0.8;
+}
+
+.menu-heading-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu-count {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+}
+
+.refresh-menu-btn, .menu-save-btn, .menu-cancel-btn,
+.menu-edit-btn, .menu-availability-btn, .menu-delete-btn {
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.refresh-menu-btn {
+    border: 1px solid var(--secondary-color);
+    color: var(--primary-color);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.refresh-menu-btn:hover:not(:disabled) {
+    background: var(--secondary-color);
+    color: #500202;
+}
+
+.menu-form-section, .menu-list-section {
+    margin-bottom: 2rem;
+}
+
+.menu-form-section h2, .menu-list-section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.menu-form {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.menu-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+}
+
+.menu-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.menu-form-group label {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.menu-form-group input, .menu-form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    outline: none;
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--text-color);
+    font: inherit;
+    font-size: 0.9rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-form-group input:focus, .menu-form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(246, 250, 23, 0.2);
+}
+
+.menu-form-group input::placeholder, .menu-form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.menu-description-group {
+    grid-column: 1 / -1;
+}
+
+.menu-form-group textarea {
+    resize: vertical;
+}
+
+.menu-form-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+}
+
+.menu-save-btn {
+    border: 1px solid var(--primary-color);
+    background: var(--secondary-color);
+    color: #500202;
+}
+
+.menu-save-btn:hover:not(:disabled) {
+    background: transparent;
+    color: var(--primary-color);
+}
+
+.menu-cancel-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--text-color);
+}
+
+.menu-cancel-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/*Menu Items*/
+
+.menu-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+}
+
+.menu-admin-card {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.menu-admin-image {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.menu-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--text-color);
+    opacity: 0.6;
+}
+
+.menu-admin-details {
+    padding: 1rem;
+}
+
+.menu-admin-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.menu-admin-title h3 {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.menu-admin-price {
+    color: var(--secondary-color);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.menu-admin-category {
+    margin: 0.5rem 0;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+}
+
+.menu-admin-description {
+    min-height: 42px;
+    margin: 0.7rem 0;
+    color: var(--text-color);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+.menu-availability {
+    display: inline-block;
+    padding: 0.35rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.menu-availability.available {
+    background: rgba(155, 231, 165, 0.12);
+    color: #9be7a5;
+}
+
+.menu-availability.unavailable {
+    background: rgba(255, 133, 133, 0.12);
+    color: #ff8585;
+}
+
+.menu-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.menu-edit-btn {
+    border: 1px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+}
+
+.menu-edit-btn:hover:not(:disabled) {
+    background: var(--primary-color);
+    color: #500202;
+}
+
+.menu-availability-btn {
+    border: 1px solid var(--secondary-color);
+    background: transparent;
+    color: var(--secondary-color);
+}
+
+.menu-availability-btn:hover:not(:disabled) {
+    background: var(--secondary-color);
+    color: #500202;
+}
+
+.menu-delete-btn {
+    border: 1px solid #ff7777;
+    background: transparent;
+    color: #ff7777;
+}
+
+.menu-delete-btn:hover:not(:disabled) {
+    background: #ff7777;
+    color: #500202;
+}
+
+.menu-empty, .menu-message {
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.menu-error {
+    color: #ff7777;
+}
+
+.refresh-menu-btn:disabled, .menu-save-btn:disabled, .menu-cancel-btn:disabled,
+.menu-availability-btn:disabled, .menu-edit-btn:disabled, .menu-delete-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .manage-menu {
+        padding: 1rem;
+    }
+
+    .menu-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .menu-form {
+        padding: 1rem;
+    }
+
+    .menu-items-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-heading-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .menu-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-description-group {
+        grid-column: auto;
+    }
+
+    .menu-form-actions {
+        flex-direction: column;
+    }
+
+    .menu-form-actions button {
+        width: 100%;
+    }
+
+    .menu-card-actions button {
+        flex: 1 1 auto;
+    }
+}

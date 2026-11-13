@@ -1,0 +1,135 @@
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+    background: #363636;
+}
+
+.admin-sidebar {
+    width: 250px;
+    min-width: 250px;
+    min-height: 100vh;
+    background: #520202;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 15px;
+    box-sizing: border-box;
+}
+
+.admin-brand {
+    padding: 5px 15px 35px;
+}
+
+.admin-brand h2 {
+    color: white;
+    font-size: 1.7rem;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.admin-brand h2 span {
+    color: var(--primary-color);
+}
+
+.admin-brand p {
+    color: #c9a9a9;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.admin-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.admin-nav-link, .admin-logout {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 13px 15px;
+    border-radius: 8px;
+    color: #e5cccc;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.admin-nav-link:hover, .admin-logout:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.admin-nav-link.active {
+    background: var(--primary-color);
+    color: #520202;
+    font-weight: 600;
+}
+
+.nav-icon {
+    width: 25px;
+    min-width: 25px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.admin-sidebar-bottom {
+    margin-top: auto;
+    padding-top: 25px;
+}
+
+.admin-logout {
+    width: 100%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+}
+
+.admin-content {
+    flex: 1;
+    min-width: 0;
+    padding: 30px;
+}
+
+@media (max-width: 768px) {
+    .admin-sidebar {
+        width: 75px;
+        min-width: 75px;
+        padding: 20px 10px;
+    }
+
+    .admin-brand {
+        padding: 5px 0 35px;
+        text-align: center;
+    }
+
+    .admin-brand h2 {
+        font-size: 0.85rem;
+        letter-spacing: 0;
+        color: var(--primary-color);
+    }
+
+    .admin-brand h2 span {
+        display: none;
+    }
+
+    .admin-brand p, .nav-text {
+        display: none;
+    }
+
+    .admin-nav-link, .admin-logout {
+        justify-content: center;
+        padding: 13px 5px;
+    }
+
+    .nav-icon {
+        font-size: 1.4rem;
+    }
+
+    .admin-content {
+        padding: 20px 15px;
+    }
+}
