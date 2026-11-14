@@ -9,7 +9,21 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://bitebox-foods.netlify.app"
+];
+
+app.use(cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    allowedHeaders: [
+        "Content-Type",
+        "Authorization",
+        "X-Order-Token"
+    ]
+}));
+
 app.use(express.json());
 app.use("/api/menu", menuRoutes);
 app.use("/api/orders", orderRoutes);
