@@ -83,7 +83,7 @@
 }
 
 .navbar a::after,
-.user-navigation a::after {
+.user-navigation a:not(.sign-in-btn):not(.sign-up-btn):not(.cart-link)::after {
     content: "";
     position: absolute;
     left: 0;
@@ -100,7 +100,8 @@
   transform: scaleX(1);
 }
 
-.navbar a:not(.active):hover, .user-navigation a:not(.active):hover {
+.navbar a:not(.active):hover,
+.user-navigation a:not(.active):not(.sign-in-btn):not(.sign-up-btn):not(.cart-link):hover {
     transform: scale(0.9);
     color: var(--secondary-color);
 }
@@ -116,8 +117,40 @@
     align-items: center;
 }
 
+.sign-in-btn,
+.sign-up-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.85rem !important;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.4s ease, color 0.4s ease,
+                border-color 0.4s ease;
+}
+
 .sign-in-btn {
-    font-size: 0.95rem;
+    border: 1px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color) !important;
+}
+
+.sign-in-btn:hover {
+    background: var(--primary-color);
+    color: rgb(82, 2, 2) !important;
+}
+
+.sign-up-btn {
+    border: 1px solid var(--secondary-color);
+    background: var(--secondary-color);
+    color: rgb(82, 2, 2) !important;
+}
+
+.sign-up-btn:hover {
+    background: transparent;
+    color: var(--secondary-color) !important;
 }
 
 .sign-in-btn.active::after {

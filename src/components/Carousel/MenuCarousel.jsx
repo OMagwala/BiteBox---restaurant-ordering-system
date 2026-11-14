@@ -58,9 +58,31 @@ function MenuCarousel() {
         );
     }
 
-    if (loading) return <p>Loading featured meals...</p>;
+    if (loading) {
+        return (
+            <section className="menu-carousel">
+                <h2>A Taste of BiteBox</h2>
+                <p className="carousel-loading">Loading featured meals...</p>
+            </section>
+        );
+    }
 
-    if (error) return <p>{error}</p>;
+    if (error) {
+        return (
+            <section className="menu-carousel">
+                <h2>A Taste of BiteBox</h2>
+
+                <div className="carousel-error">
+                    <span className="error-icon">!</span>
+                    <h3>Featured meals unavailable</h3>
+                    <p>
+                        We couldn't load our featured meals right now.
+                        Please try again later.
+                    </p>
+                </div>
+            </section>
+        );
+    }
 
     if (menuItems.length === 0) return null;
 

@@ -98,6 +98,54 @@
     transform: scale(1.3);
 }
 
+.carousel-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    min-height: 250px;
+    padding: 2rem;
+    border: 1px solid rgba(248, 136, 7, 0.4);
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.error-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50%;
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.carousel-error h3 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.carousel-error p {
+    max-width: 380px;
+    margin: 0;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.carousel-loading {
+    padding: 3rem 1rem;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
 .carousel-image {
     animation: carouselFade 0.7s ease-in-out;
 }

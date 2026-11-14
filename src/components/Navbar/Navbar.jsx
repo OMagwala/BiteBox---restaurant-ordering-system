@@ -86,6 +86,9 @@ function Navbar() {
                             <NavLink to="/login" className="sign-in-btn" onClick={handleNavClick}>
                                 Sign In
                             </NavLink>
+                            <NavLink to="/register" className="sign-up-btn" onClick={handleNavClick}>
+                                Sign Up
+                            </NavLink>
                     </>
                 )}
 
