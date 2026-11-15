@@ -231,4 +231,42 @@
         display: block;
     }
 
+    .left-section {
+        gap: 0.6rem;
+        min-width: 0;
+    }
+
+    .user-greeting {
+        font-size: 0.9rem;
+    }
+
+    .user-navigation {
+        gap: 0.6rem;
+        flex-shrink: 0;
+    }
+
+    .logout-btn {
+        padding: 0.4rem 0.65rem;
+        font-size: 0.8rem;
+    }
+
+}
+
+@media (max-width: 380px) {
+    .user-greeting {
+        font-size: 0.75rem;
+    }
+
+    .left-section {
+        gap: 0.35rem;
+    }
+
+    .user-navigation {
+        gap: 0.35rem;
+    }
+
+    .logout-btn {
+        padding: 0.35rem 0.5rem;
+        font-size: 0.75rem;
+    }
 }

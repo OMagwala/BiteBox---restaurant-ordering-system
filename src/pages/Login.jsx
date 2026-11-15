@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { useNavigate, Link } from 'react-router-dom';
 import { loginUser } from '../services/authService';
 import { motion } from "framer-motion";
@@ -12,6 +13,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -42,17 +44,22 @@ function Login() {
         </div>
 
         <div className="form-field">
-          <input type="email" id="login email" placeholder=" " value={email}
+          <input type="email" id="login-email" placeholder=" " value={email}
             onChange={(event) => setEmail(event.target.value)}
             autoComplete="email" required/>
-          <label htmlFor="login-email">Email Address</label>
+          <label htmlFor="login-email">Email</label>
         </div>
 
         <div className="form-field">
-          <input type="password" id="login-password" placeholder=" " value={password}
+          <input type={showPassword ? "text" : "password"} id="login-password" placeholder=" " value={password}
             onChange={(event) => setPassword(event.target.value)} autoComplete="current-password"
             required />
           <label htmlFor="login-password">Password</label>
+
+          <button className="password-toggle" type="button" onClick={() => setShowPassword(prev => !prev)}
+              aria-label={showPassword ? "Hide password" : "Show password"}>
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
+          </button>
         </div>
 
         {error && (

@@ -54,6 +54,40 @@
     font-size: 1.04rem;
 }
 
+.password-field input {
+    padding-right: 3rem !important;
+}
+
+.auth-card .password-toggle {
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 0.3rem;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.auth-card .password-toggle:hover {
+    background: transparent;
+    color: var(--primary-color);
+    transform: translateY(-50%);
+}
+
+.auth-card .password-toggle:active {
+    transform: translateY(-50%);
+}
+
+.auth-card .password-toggle:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
 .auth-card .form-field label {
     position: absolute;
     left: 1rem;
