@@ -66,9 +66,9 @@ function Home() {
                 <div className="visit-details">
                     <div className="visit-card">
                         <h3>Our Location</h3>
-                        <p>29 Hill St, Makhanda, 6139</p>
+                        <p>39 High St, Makhanda, 6139</p>
                         <a
-                            href="https://www.google.com/maps/dir/?api=1&destination=29+Hill+St%2C+Makhanda%2C+6139"
+                            href="https://www.google.com/maps/dir/?api=1&destination=39+High+St%2C+Makhanda%2C+6139"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="location-link"
