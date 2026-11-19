@@ -10,8 +10,9 @@
     font-size: 18px;
     font-family: 'Lucida Sans';
     color: var(--text-color);
-    position: relative;
-    z-index: 100;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     transition: 0.3s ease-in-out;
 }
 
@@ -206,13 +207,19 @@
         min-height: 168px;
         background: rgba(0, 0, 0, 0.623);
         backdrop-filter: blur(10px);
-        transition: left 0.4s ease-out;
-        transform: translateX(-100%);
         z-index: 100;
+        transform: translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s ease;
     }
 
     .navbar.open {
         transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 
     .navbar a {

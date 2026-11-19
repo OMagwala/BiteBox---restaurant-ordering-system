@@ -1,7 +1,7 @@
 import logo from '../../../assets/HeroImages/Logo.png';
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa";
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, useRef } from 'react';
 import { getStoredUser, logoutUser } from '../../services/authService';
 import { CartContext } from '../../context/CartContext';
 import './Navbar.css';
@@ -9,12 +9,12 @@ import './Navbar.css';
 function Navbar() {
 
     const [menuOpen, setMenuOpen] = useState(false);
-
     const [user, setUser] = useState(() => getStoredUser());
 
     const navigate = useNavigate();
-
     const { cart } = useContext(CartContext);
+    const menuRef = useRef(null);
+    const menuButtonRef = useRef(null);
 
     function handleNavClick() {
         setMenuOpen(false);
@@ -38,6 +38,24 @@ function Navbar() {
         }
     }, []);
 
+    useEffect(() => {
+        function handleOutsideClick(event) {
+            if (menuRef.current && !menuRef.current.contains(event.target) &&
+                menuButtonRef.current && !menuButtonRef.current.contains(event.target)
+            ) {
+                setMenuOpen(false);
+            }
+        }
+
+        if (menuOpen) {
+            document.addEventListener("pointerdown", handleOutsideClick);
+        }
+
+        return () => {
+            document.removeEventListener("pointerdown", handleOutsideClick);
+        }
+    }, [menuOpen]);
+
     function handleLogout() {
         logoutUser();
         setMenuOpen(false);
@@ -53,7 +71,7 @@ function Navbar() {
                         <img src={logo} alt="BiteBox logo" />
                     </Link>
                 </div>
-                <button className="menu-icon" type="button" onClick={() => setMenuOpen(prev => !prev)}
+                <button ref={menuButtonRef} className="menu-icon" type="button" onClick={() => setMenuOpen(prev => !prev)}
                     aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
                     aria-expanded={menuOpen} aria-controls="menu-navigation">
                     {menuOpen ? <FaTimes /> : <FaBars />}
@@ -61,7 +79,7 @@ function Navbar() {
 
                 {user && <span className="user-greeting">Hi, {user.name}</span>}
             </div>
-            <nav className={menuOpen ? "navbar open" : "navbar"}>
+            <nav ref={menuRef} className={menuOpen ? "navbar open" : "navbar"}>
                 <NavLink to="/" onClick={handleNavClick}>Home</NavLink>
                 <NavLink to="/menu" onClick={handleNavClick}>Menu</NavLink>
                 {user && (user.role === "admin" ? (
